@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoveCode | أعمال تجريبية</title>
+<style>
+  :root{--rose:#c2306b;--deep:#2b0f1d;--cream:#fdf7f2;--gold:#d4a24e;--muted:#8a6474}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+  body{background:var(--cream);color:var(--deep);min-height:100vh;display:flex;flex-direction:column}
+  header{padding:20px 6vw;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #f0dbe4}
+  .logo{font-size:24px;font-weight:800;color:var(--rose)}
+  .logo span{color:var(--gold)}
+  main{flex:1;padding:56px 6vw;max-width:1000px;margin:auto;width:100%}
+  h1{font-size:clamp(28px,5vw,44px);text-align:center}
+  .sub{text-align:center;color:var(--muted);margin:12px 0 40px;font-size:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(194,48,107,.10);
+    text-decoration:none;color:inherit;transition:transform .25s;display:block}
+  .card:hover{transform:translateY(-6px)}
+  .card .art{height:150px;display:flex;align-items:center;justify-content:center;font-size:60px}
+  .ward .art{background:linear-gradient(135deg,#f7e6ec,#fdeef5)}
+  .cafe .art{background:linear-gradient(135deg,#2a1d16,#41301f)}
+  .card .body{padding:18px}
+  .card h2{font-size:19px;margin-bottom:4px}
+  .card p{font-size:13px;color:var(--muted)}
+  .tag{display:inline-block;margin-top:10px;background:#f7e6ec;color:var(--rose);font-size:11px;
+    font-weight:700;border-radius:8px;padding:4px 10px}
+  footer{text-align:center;padding:26px 6vw;color:var(--muted);font-size:13px;border-top:1px solid #f0dbe4}
+  footer b{color:var(--rose)}
+</style>
+</head>
+<body>
+<header><div class="logo">LoveCode<span>💝</span></div></header>
+<main>
+  <h1>أعمال تجريبية</h1>
+  <p class="sub">دي مواقع لبراندات وهمية بنعرض بيها شكل الشغل — كل البيانات والأسعار فيها للعرض فقط</p>
+  <div class="grid">
+    <a class="card ward" href="ward/">
+      <div class="art">🌹</div>
+      <div class="body">
+        <h2>وردة | بوتيك ورود وهدايا</h2>
+        <p>متجر إلكتروني كامل بسلة مشتريات ولوحة تحكم للمنتجات</p>
+        <span class="tag">متجر + لوحة تحكم</span>
+      </div>
+    </a>
+    <a class="card cafe" href="cafe/">
+      <div class="art">☕</div>
+      <div class="body">
+        <h2>غروب | كافيه ومكتبة</h2>
+        <p>موقع كافيه بمنيو ونموذج حجز ترابيزة</p>
+        <span class="tag">منيو + حجز</span>
+      </div>
+    </a>
+  </div>
+</main>
+<footer>اتنفّذ بواسطة <b>LoveCode</b> 💝 — مواقع تجريبية لبراندات وهمية لعرض طبيعة الشغل فقط</footer>
+</body>
+</html>
