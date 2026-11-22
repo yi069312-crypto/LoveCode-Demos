@@ -35,8 +35,9 @@
   .stat{background:#fff;border-radius:14px;padding:18px;text-align:center;box-shadow:0 4px 12px rgba(142,29,76,.06)}
   .stat .n{font-size:26px;font-weight:800;color:var(--rose)}
   .stat .l{font-size:13px;color:#8a6474;margin-top:4px}
-  table{width:100%;background:#fff;border-radius:14px;border-collapse:collapse;overflow:hidden;
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;
     box-shadow:0 4px 12px rgba(142,29,76,.06)}
+  table{width:100%;min-width:640px;background:#fff;border-collapse:collapse;overflow:hidden}
   th,td{padding:12px 14px;text-align:right;font-size:14px;border-bottom:1px solid #f7e6ec}
   th{background:var(--soft);color:var(--rose-deep)}
   td input[type=text],td input[type=number]{width:100%;padding:6px 8px;border:1px solid #efd7e1;border-radius:8px;font-size:14px}
@@ -89,10 +90,12 @@
     <div class="stat"><div class="n" id="sAvail">0</div><div class="l">متاح</div></div>
     <div class="stat"><div class="n" id="sAvg">0</div><div class="l">متوسط السعر (ج.م)</div></div>
   </div>
+  <div class="tbl-wrap">
   <table>
     <thead><tr><th>الأيقونة</th><th>الاسم</th><th>الوصف</th><th>السعر</th><th>متاح</th><th></th></tr></thead>
     <tbody id="rows"></tbody>
   </table>
+  </div>
 </main>
 </div>
 
