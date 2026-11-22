@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم | وردة</title>
+<style>
+  :root{--rose:#c2306b;--rose-deep:#8e1d4c;--cream:#fdf7f2;--ink:#3a2230;--gold:#d4a24e;--soft:#f7e6ec}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+  body{background:var(--cream);color:var(--ink);min-height:100vh}
+  .demo-ribbon{position:fixed;top:14px;left:-42px;transform:rotate(-45deg);background:var(--gold);
+    color:#fff;padding:6px 48px;font-size:12px;font-weight:700;z-index:60;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .login-card{background:#fff;border-radius:20px;padding:36px;width:min(380px,94vw);
+    box-shadow:0 10px 30px rgba(142,29,76,.12);text-align:center}
+  .login-card h1{color:var(--rose-deep);font-size:24px;margin-bottom:4px}
+  .login-card p{color:#8a6474;font-size:14px;margin-bottom:20px}
+  .login-card input{width:100%;padding:12px 14px;border:1.5px solid #efd7e1;border-radius:12px;
+    font-size:15px;margin-bottom:12px;outline:none}
+  .login-card input:focus{border-color:var(--rose)}
+  .login-card button{width:100%;background:var(--rose);color:#fff;border:none;border-radius:12px;
+    padding:13px;font-size:16px;font-weight:700;cursor:pointer}
+  .hint{margin-top:14px;background:var(--soft);border-radius:10px;padding:10px;font-size:13px;color:var(--rose-deep)}
+  .err{color:#c22;font-size:13px;margin-bottom:10px;display:none}
+  /* dashboard */
+  header{display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;
+    background:#fff;border-bottom:1px solid #f0dbe4;position:sticky;top:0}
+  header b{color:var(--rose-deep);font-size:20px}
+  .h-actions{display:flex;gap:10px}
+  .btn{background:var(--rose);color:#fff;border:none;border-radius:10px;padding:9px 16px;
+    font-size:14px;font-weight:700;cursor:pointer}
+  .btn.gray{background:#eee;color:var(--ink)}
+  main{padding:28px 5vw;max-width:1000px;margin:auto}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:26px}
+  .stat{background:#fff;border-radius:14px;padding:18px;text-align:center;box-shadow:0 4px 12px rgba(142,29,76,.06)}
+  .stat .n{font-size:26px;font-weight:800;color:var(--rose)}
+  .stat .l{font-size:13px;color:#8a6474;margin-top:4px}
+  table{width:100%;background:#fff;border-radius:14px;border-collapse:collapse;overflow:hidden;
+    box-shadow:0 4px 12px rgba(142,29,76,.06)}
+  th,td{padding:12px 14px;text-align:right;font-size:14px;border-bottom:1px solid #f7e6ec}
+  th{background:var(--soft);color:var(--rose-deep)}
+  td input[type=text],td input[type=number]{width:100%;padding:6px 8px;border:1px solid #efd7e1;border-radius:8px;font-size:14px}
+  .mini{border:none;border-radius:8px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer}
+  .mini.del{background:#fbe3ea;color:#c22}
+  .mini.save{background:#e3f6ec;color:#1a7a4a}
+  .switch{position:relative;width:42px;height:22px}
+  .switch input{opacity:0;width:0;height:0}
+  .slider{position:absolute;inset:0;background:#e5c4d2;border-radius:22px;cursor:pointer;transition:.2s}
+  .slider:before{content:'';position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:3px;right:3px;transition:.2s}
+  .switch input:checked + .slider{background:var(--rose)}
+  .switch input:checked + .slider:before{transform:translateX(-20px)}
+  /* modal */
+  .modal{position:fixed;inset:0;background:rgba(58,34,48,.45);display:none;align-items:center;justify-content:center;padding:20px}
+  .modal.show{display:flex}
+  .modal-card{background:#fff;border-radius:18px;padding:26px;width:min(420px,94vw)}
+  .modal-card h2{color:var(--rose-deep);font-size:19px;margin-bottom:16px}
+  .modal-card input,.modal-card select{width:100%;padding:10px 12px;border:1.5px solid #efd7e1;border-radius:10px;font-size:14px;margin-bottom:10px}
+  .note{background:var(--soft);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--rose-deep);margin-bottom:20px}
+</style>
+</head>
+<body>
+<div class="demo-ribbon">لوحة تجريبية</div>
+
+<div class="login-wrap" id="loginView">
+  <div class="login-card">
+    <h1>وردة<span style="color:var(--gold)">.</span></h1>
+    <p>لوحة تحكم البراند التجريبية</p>
+    <div class="err" id="err">بيانات الدخول غلط — جرّب تاني</div>
+    <input type="text" id="u" placeholder="اسم المستخدم" autocomplete="off">
+    <input type="password" id="p" placeholder="كلمة السر">
+    <button onclick="login()">دخول</button>
+    <div class="hint">للتجربة: المستخدم <b>demo</b> وكلمة السر <b>1234</b><br>(لوحة تجريبية — في النسخة الحقيقية بيانات الدخول خاصة بصاحب البراند بس)</div>
+  </div>
+</div>
+
+<div id="dash" style="display:none">
+<header>
+  <b>وردة<span style="color:var(--gold)">.</span> لوحة التحكم</b>
+  <div class="h-actions">
+    <button class="btn" onclick="openModal()">+ منتج جديد</button>
+    <button class="btn gray" onclick="location.href='index.html'">المتجر</button>
+    <button class="btn gray" onclick="logout()">خروج</button>
+  </div>
+</header>
+<main>
+  <div class="note">دي لوحة تجريبية ببيانات وهمية للعرض. أي تعديل بيظهر فورًا على صفحة المتجر (نفس المتصفح)، وبيتحفظ محليًا.</div>
+  <div class="stats">
+    <div class="stat"><div class="n" id="sCount">0</div><div class="l">منتج</div></div>
+    <div class="stat"><div class="n" id="sAvail">0</div><div class="l">متاح</div></div>
+    <div class="stat"><div class="n" id="sAvg">0</div><div class="l">متوسط السعر (ج.م)</div></div>
+  </div>
+  <table>
+    <thead><tr><th>الأيقونة</th><th>الاسم</th><th>الوصف</th><th>السعر</th><th>متاح</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</main>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <h2>منتج جديد</h2>
+    <input type="text" id="fName" placeholder="اسم المنتج">
+    <input type="text" id="fDesc" placeholder="وصف قصير">
+    <input type="number" id="fPrice" placeholder="السعر بالجنيه">
+    <select id="fIcon"><option>🌹</option><option>🌷</option><option>🍫</option><option>🌻</option><option>💐</option><option>🎁</option><option>🧸</option><option>🕯️</option></select>
+    <button class="btn" style="width:100%" onclick="addProduct()">إضافة</button>
+    <button class="btn gray" style="width:100%;margin-top:8px" onclick="closeModal()">إلغاء</button>
+  </div>
+</div>
+
+<script>
+const KEY='ward_products_v1';
+const DEFAULTS=[
+ {id:1,name:'بوكيه ورد أحمر',price:350,icon:'🌹',desc:'12 وردة حمراء مع تغليف فاخر'},
+ {id:2,name:'بوكيه توليب',price:420,icon:'🌷',desc:'توليب هولندي ألوان مختلطة'},
+ {id:3,name:'بوكس ورد وشكولاتة',price:550,icon:'🍫',desc:'ورد + شكولاتة بلجيكية في بوكس أنيق'},
+ {id:4,name:'فازة جيبسوفيلا',price:280,icon:'🤍',desc:'سحابة بيضاء ناعمة في فازة زجاج'},
+ {id:5,name:'بوكيه عباد الشمس',price:300,icon:'🌻',desc:'بهجة صفراء ليوم حلو'},
+ {id:6,name:'هدية خطوبة مميزة',price:850,icon:'💍',desc:'تجهيزة كاملة: ورد + بوكس + كارت'},
+];
+function load(){try{const p=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(p)&&p.length)return p;}catch(e){}return[...DEFAULTS];}
+function save(p){localStorage.setItem(KEY,JSON.stringify(p));}
+let products=load();
+function login(){
+  const u=document.getElementById('u').value.trim(),p=document.getElementById('p').value;
+  if(u==='demo'&&p==='1234'){sessionStorage.setItem('ward_admin','1');show();}
+  else document.getElementById('err').style.display='block';
+}
+function logout(){sessionStorage.removeItem('ward_admin');location.reload();}
+function show(){
+  document.getElementById('loginView').style.display='none';
+  document.getElementById('dash').style.display='block';render();
+}
+function render(){
+  document.getElementById('sCount').textContent=products.length;
+  document.getElementById('sAvail').textContent=products.filter(p=>p.available!==false).length;
+  const avg=products.length?Math.round(products.reduce((s,p)=>s+Number(p.price||0),0)/products.length):0;
+  document.getElementById('sAvg').textContent=avg;
+  const tb=document.getElementById('rows');tb.innerHTML='';
+  products.forEach((p,i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td style="font-size:22px">${p.icon||'🌸'}</td>
+      <td><input type="text" value="${p.name}" onchange="upd(${i},'name',this.value)"></td>
+      <td><input type="text" value="${p.desc||''}" onchange="upd(${i},'desc',this.value)"></td>
+      <td style="width:90px"><input type="number" value="${p.price}" onchange="upd(${i},'price',this.value)"></td>
+      <td><label class="switch"><input type="checkbox" ${p.available!==false?'checked':''} onchange="upd(${i},'available',this.checked)"><span class="slider"></span></label></td>
+      <td><button class="mini del" onclick="del(${i})">حذف</button></td>`;
+    tb.appendChild(tr);
+  });
+}
+function upd(i,k,v){if(k==='price')v=Number(v)||0;products[i][k]=v;save(products);render();}
+function del(i){if(confirm('تحذف المنتج ده؟')){products.splice(i,1);save(products);render();}}
+function openModal(){document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+function addProduct(){
+  const name=document.getElementById('fName').value.trim();
+  if(!name){alert('اكتب اسم المنتج الأول');return;}
+  products.push({id:Date.now(),name,desc:document.getElementById('fDesc').value.trim(),
+    price:Number(document.getElementById('fPrice').value)||0,
+    icon:document.getElementById('fIcon').value,available:true});
+  save(products);closeModal();render();
+}
+if(sessionStorage.getItem('ward_admin')==='1')show();
+</script>
+</body>
+</html>
