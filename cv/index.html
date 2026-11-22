@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مريم حسن | سيرة ذاتية تفاعلية، ديمو من LoveCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101224; --bg2:#171a33; --card:#1c2038; --line:#2b3052;
+  --violet:#8b7cf6; --coral:#ff8a7a; --ink:#f4f2ff; --muted:#a9aecf;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:
+  radial-gradient(600px 400px at 85% -5%, rgba(139,124,246,.16), transparent 60%),
+  radial-gradient(500px 380px at 5% 35%, rgba(255,138,122,.10), transparent 60%),
+  radial-gradient(500px 500px at 90% 90%, rgba(139,124,246,.10), transparent 60%);
+  pointer-events:none;z-index:0}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+/* header */
+header{position:fixed;top:0;right:0;left:0;z-index:10;background:rgba(16,18,36,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#101224}
+nav a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;margin-right:16px}
+nav a:hover{color:var(--ink)}
+/* hero */
+.hero{min-height:844px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 20px 60px;position:relative;z-index:1}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(139,124,246,.12);color:#c9c2f5;font-size:13px;font-weight:700;margin-bottom:26px}
+.mono{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:#101224;margin-bottom:26px;box-shadow:0 18px 50px rgba(139,124,246,.35)}
+.hero h1{font-size:40px;font-weight:900;line-height:1.25;margin-bottom:14px}
+.hero h1 span{background:linear-gradient(90deg,var(--violet),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.role{color:var(--muted);font-size:17px;line-height:1.9;max-width:420px;margin-bottom:30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:13px 30px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:linear-gradient(135deg,var(--violet),var(--coral));color:#101224;box-shadow:0 10px 30px rgba(139,124,246,.35)}
+.btn-o{border:1px solid var(--line);color:var(--ink);background:rgba(28,32,56,.6)}
+.scroll-hint{margin-top:44px;color:var(--muted);font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint svg{animation:bob 1.6s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+/* sections */
+section{padding:74px 0;position:relative;z-index:1}
+.eyebrow{color:var(--coral);font-size:13px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+h2.title{font-size:30px;font-weight:900;margin-bottom:8px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:34px;line-height:1.8}
+.note{display:inline-block;margin-top:18px;padding:6px 14px;border-radius:999px;background:rgba(255,138,122,.10);border:1px dashed rgba(255,138,122,.4);color:#ffb3a8;font-size:12px;font-weight:700}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 10px;text-align:center}
+.stat b{display:block;font-size:30px;font-weight:900;background:linear-gradient(90deg,var(--violet),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:13px;font-weight:600}
+/* about */
+.about-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
+.about-card p{color:#d6d9ef;line-height:2;margin-bottom:22px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:999px;background:rgba(139,124,246,.12);border:1px solid var(--line);font-size:13px;font-weight:700;color:#c9c2f5}
+/* skills */
+.skill{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:14px}
+.skill .row{display:flex;justify-content:space-between;font-size:14px;font-weight:800;margin-bottom:10px}
+.skill .row b{color:var(--coral)}
+.bar{height:8px;border-radius:99px;background:#262b49;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--violet),var(--coral));width:0;transition:width 1.4s cubic-bezier(.2,.7,.3,1)}
+/* works */
+.works{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.work{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.work .thumb{height:130px;position:relative}
+.work .thumb svg{position:absolute;inset:0;margin:auto}
+.work .body{padding:16px}
+.work .body b{display:block;font-size:15px;font-weight:800;margin-bottom:4px}
+.work .body span{color:var(--muted);font-size:12px}
+.t1{background:linear-gradient(135deg,#8b7cf6,#5a4fd6)}.t2{background:linear-gradient(135deg,#ff8a7a,#e05a48)}
+.t3{background:linear-gradient(135deg,#4fd6c8,#2a9d8f)}.t4{background:linear-gradient(135deg,#f6c177,#d6863a)}
+/* experience */
+.tl{position:relative;padding-right:26px}
+.tl::before{content:'';position:absolute;right:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--violet),var(--coral))}
+.tl-item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:16px}
+.tl-item::before{content:'';position:absolute;right:-24px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--coral);border:3px solid var(--bg)}
+.tl-item .when{color:var(--violet);font-size:12px;font-weight:800;margin-bottom:4px}
+.tl-item b{display:block;font-size:16px;font-weight:800;margin-bottom:6px}
+.tl-item p{color:var(--muted);font-size:13px;line-height:1.8}
+/* testimonials */
+.quote{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:16px;position:relative}
+.quote::before{content:'\201D';position:absolute;top:6px;left:20px;font-size:64px;color:rgba(139,124,246,.25);font-family:serif}
+.quote p{color:#d6d9ef;font-size:14px;line-height:1.9;margin-bottom:14px}
+.quote .who{display:flex;align-items:center;gap:12px}
+.quote .who .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-weight:900;color:#101224;font-size:15px}
+.quote .who b{display:block;font-size:14px}
+.quote .who span{color:var(--muted);font-size:12px}
+/* contact */
+.contact-card{background:linear-gradient(160deg,#1c2038,#171a33);border:1px solid var(--line);border-radius:24px;padding:34px 28px;text-align:center}
+.contact-card h2{font-size:26px;font-weight:900;margin-bottom:8px}
+.contact-card>p{color:var(--muted);font-size:14px;margin-bottom:26px;line-height:1.9}
+.field{width:100%;background:#12152a;border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);font-family:inherit;font-size:14px;margin-bottom:12px;text-align:right}
+.field:focus{outline:none;border-color:var(--violet)}
+textarea.field{min-height:110px;resize:vertical}
+.send{width:100%;border:none;cursor:pointer;padding:15px;border-radius:14px;font-family:inherit;font-weight:900;font-size:16px;color:#101224;background:linear-gradient(135deg,var(--violet),var(--coral))}
+.demo-note{margin-top:16px;font-size:12px;color:var(--muted)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:44px 0 60px;text-align:center;position:relative;z-index:1}
+footer .brand{font-size:22px;font-weight:900;margin-bottom:8px}
+footer .brand span{background:linear-gradient(90deg,var(--violet),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+footer p{color:var(--muted);font-size:13px;margin-bottom:14px}
+.fchip{display:inline-block;padding:7px 18px;border-radius:999px;border:1px dashed var(--line);color:var(--muted);font-size:12px;font-weight:700}
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:420px){.hero h1{font-size:33px}.stats{gap:10px}.stat b{font-size:24px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">م ح</div>
+    <nav>
+      <a href="#about">عنّي</a>
+      <a href="#works">أعمالي</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="badge">نموذج سيرة ذاتية تفاعلية، ديمو للعرض</div>
+  <div class="mono">م ح</div>
+  <h1>مريم حسن علي<br><span>مصممة جرافيك وهوية بصرية</span></h1>
+  <p class="role">بحوّل الأفكار لعلامات تتفتكر. شغلتي إن براندك يبان ويتباع، من أول لوجو لآخر بوست.</p>
+  <div class="cta-row">
+    <a class="btn btn-p" href="#works">شوف أعمالي</a>
+    <a class="btn btn-o" href="#contact">كلمني</a>
+  </div>
+  <div class="scroll-hint">اسحب للأسفل
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a9aecf" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</div>
+
+<section>
+  <div class="wrap reveal">
+    <div class="stats">
+      <div class="stat"><b class="cnt" data-to="6">0</b><span>سنين خبرة</span></div>
+      <div class="stat"><b class="cnt" data-to="85">0</b><span>مشروع مكتمل</span></div>
+      <div class="stat"><b class="cnt" data-to="40">0</b><span>عميل سعيد</span></div>
+    </div>
+    <div style="text-align:center"><span class="note">أرقام افتراضية لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">من هي مريم؟</div>
+      <h2 class="title">عنّي</h2>
+      <p class="sub">سيرة ذاتية تتكلم عنك بدل ما تتقرأ.</p>
+    </div>
+    <div class="about-card reveal">
+      <p>مصممة شغوفة بالتفاصيل، بدأت من شغف الرسم ووصلت لبناء هويات بصرية كاملة لشركات ناشئة ومشاريع صغيرة. بشتغل بفلسفة بسيطة: التصميم الحلو هو اللي بيبيع وبيتفتكر.</p>
+      <div class="chips">
+        <span class="chip">القاهرة، مصر</span>
+        <span class="chip">هوية بصرية</span>
+        <span class="chip">سوشيال ميديا</span>
+        <span class="chip">عربي وإنجليزي</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">بشتغل إزاي؟</div>
+      <h2 class="title">مهاراتي</h2>
+      <p class="sub">نسب تقديرية لشكل العرض، مش تقييم رسمي.</p>
+    </div>
+    <div class="skill reveal"><div class="row"><span>تصميم هوية بصرية</span><b>95%</b></div><div class="bar"><i data-w="95"></i></div></div>
+    <div class="skill reveal"><div class="row"><span>تصاميم سوشيال ميديا</span><b>90%</b></div><div class="bar"><i data-w="90"></i></div></div>
+    <div class="skill reveal"><div class="row"><span>موشن جرافيك</span><b>80%</b></div><div class="bar"><i data-w="80"></i></div></div>
+    <div class="skill reveal"><div class="row"><span>واجهات UI بسيطة</span><b>75%</b></div><div class="bar"><i data-w="75"></i></div></div>
+    <div class="reveal" style="text-align:center"><span class="note">نسب افتراضية لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">شغل مختار</div>
+      <h2 class="title">أعمالي</h2>
+      <p class="sub">نماذج مشاريع وهمية لعرض شكل الموقع.</p>
+    </div>
+    <div class="works">
+      <div class="work reveal"><div class="thumb t1"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#101224" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><div class="body"><b>هوية كافيه لومير</b><span>لوجو وهوية كاملة</span></div></div>
+      <div class="work reveal"><div class="thumb t2"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#101224" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 21V9"/></svg></div><div class="body"><b>براند متجر قطن</b><span>هوية وتغليف</span></div></div>
+      <div class="work reveal"><div class="thumb t3"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#101224" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7a4.5 4.5 0 0 0-6.4-6.4L12 6l-.6-.4A4.5 4.5 0 0 0 5 12l7 7z"/></svg></div><div class="body"><b>حملة عيد الأم</b><span>سوشيال ميديا</span></div></div>
+      <div class="work reveal"><div class="thumb t4"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#101224" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div><div class="body"><b>واجهة تطبيق وردة</b><span>UI بسيط</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="exp">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">المشوار</div>
+      <h2 class="title">خبراتي</h2>
+      <p class="sub">خط زمني بسيط لأهم المحطات.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="when">٢٠٢٣ حتى الآن</div><b>مصممة مستقلة</b><p>إدارة مشاريع هوية بصرية كاملة لعملاء في مصر والخليج، من الفكرة للتسليم.</p></div>
+      <div class="tl-item reveal"><div class="when">٢٠٢١ - ٢٠٢٣</div><b>مصممة في استوديو بكسل</b><p>تصميم حملات سوشيال ميديا وهويات لأكتر من ٣٠ علامة تجارية.</p></div>
+      <div class="tl-item reveal"><div class="when">٢٠١٩ - ٢٠٢١</div><b>متدربة ثم مصممة جونيور</b><p>بداية المشوار: تعلم أساسيات البراندينج والشغل مع فرق تسويق.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="quotes">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">بيقولوا إيه؟</div>
+      <h2 class="title">آراء العملاء</h2>
+      <p class="sub">آراء افتراضية لعملاء وهميين بغرض العرض.</p>
+    </div>
+    <div class="quote reveal">
+      <p>أول مرة أحس إن حد فاهم براندي أكتر مني. الهوية اللي اتعملت رفعت مبيعاتنا فعلا.</p>
+      <div class="who"><div class="av">س</div><div><b>سارة محمود</b><span>صاحبة متجر، عميل وهمي</span></div></div>
+    </div>
+    <div class="quote reveal">
+      <p>التسليم كان أسرع من المتوقع والتفاصيل مدروسة. تعامل احترافي من أول رسالة.</p>
+      <div class="who"><div class="av">ك</div><div><b>كريم عادل</b><span>مؤسس شركة ناشئة، عميل وهمي</span></div></div>
+    </div>
+    <div class="reveal" style="text-align:center"><span class="note">آراء افتراضية لعملاء وهميين</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="eyebrow">الخطوة الجاية</div>
+      <h2>خلّي شغلك يتشاف</h2>
+      <p>ابعت تفاصيل مشروعك وسيب باقي الحكاية علينا.</p>
+      <form onsubmit="return false">
+        <input class="field" type="text" placeholder="الاسم الكريم">
+        <input class="field" type="text" placeholder="رقم الموبايل أو الإيميل">
+        <textarea class="field" placeholder="احكي لنا عن مشروعك"></textarea>
+        <button class="send" type="submit">إرسال الطلب</button>
+      </form>
+      <div class="demo-note">نموذج عرض تجريبي: لا يتم إرسال أو حفظ أي بيانات فعلية.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Love<span>Code</span></div>
+    <p>ديمو وهمي لموقع سيرة ذاتية تفاعلية من تصميم LoveCode.<br>الأسماء والأرقام والأعمال والمشاريع خيالية للعرض.</p>
+    <span class="fchip">الأسماء والأرقام والأعمال خيالية للعرض</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');
+e.target.querySelectorAll('.bar i').forEach(b=>{b.style.width=b.dataset.w+'%'});
+e.target.querySelectorAll('.cnt').forEach(c=>{if(c.dataset.done)return;c.dataset.done=1;
+const to=+c.dataset.to,t0=performance.now();const step=t=>{const p=Math.min((t-t0)/1400,1);
+c.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)})}})},{threshold:.25});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
