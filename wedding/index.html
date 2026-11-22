@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ليلى & عمر — دعوة زفاف</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#8e1d4c; --rose-soft:#c2306b; --cream:#fdf7f2; --gold:#d4a24e;
+  --ink:#3a2230; --ink-soft:#7a5c6b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+h1,h2,.names{font-family:'Amiri',serif}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 30%,#fff 0%,var(--cream) 55%,#f7e6dc 100%);padding:2rem}
+.hero .rings{width:110px;height:110px;margin-bottom:1.6rem}
+.hero .bism{font-size:1.05rem;color:var(--ink-soft);letter-spacing:.05em;margin-bottom:1.2rem}
+.hero .names{font-size:clamp(3rem,10vw,5.2rem);color:var(--rose);line-height:1.25}
+.hero .amp{color:var(--gold);font-size:.7em}
+.hero .date{font-size:1.5rem;color:var(--ink);margin-top:1rem;font-weight:500}
+.hero .hijri{font-size:.95rem;color:var(--ink-soft);margin-top:.3rem}
+.divider{width:120px;height:2px;background:var(--gold);margin:1.6rem auto;border-radius:2px;position:relative}
+.divider::after{content:'❦';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--cream);padding:0 .6rem;color:var(--gold);font-size:1.1rem}
+.scroll-hint{position:absolute;bottom:1.6rem;font-size:.85rem;color:var(--ink-soft);animation:bob 2s infinite ease-in-out}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+/* SECTIONS */
+section{padding:4.5rem 1.4rem;max-width:820px;margin:0 auto;text-align:center}
+section h2{font-size:2.1rem;color:var(--rose);margin-bottom:.4rem}
+section .sub{color:var(--ink-soft);margin-bottom:2.4rem;font-size:1rem}
+/* COUNTDOWN */
+.count{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.count .cell{background:#fff;border:1px solid #f0ddd3;border-radius:16px;padding:.9rem .7rem;min-width:76px;box-shadow:0 8px 24px rgba(142,29,76,.07)}
+.count .num{font-family:'Amiri',serif;font-size:2.4rem;color:var(--rose);font-weight:700}
+.count .lbl{font-size:.85rem;color:var(--ink-soft);margin-top:.2rem}
+/* STORY */
+.story{position:relative;text-align:right}
+.story::before{content:'';position:absolute;right:17px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),var(--rose-soft))}
+.story .item{position:relative;padding:0 3.2rem 2.2rem 0}
+.story .item::before{content:'';position:absolute;right:9px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:3px solid var(--cream);box-shadow:0 0 0 2px var(--gold)}
+.story .when{font-family:'Amiri',serif;color:var(--rose);font-size:1.15rem;font-weight:700}
+.story .what{color:var(--ink-soft);line-height:1.9}
+/* VENUE */
+.venue-card{background:#fff;border-radius:22px;border:1px solid #f0ddd3;box-shadow:0 12px 34px rgba(142,29,76,.08);padding:2.2rem;display:flex;flex-direction:column;gap:.9rem}
+.venue-card .row{display:flex;align-items:center;gap:.8rem;justify-content:center;color:var(--ink);font-size:1.05rem}
+.venue-card .ico{display:inline-flex;width:26px;height:26px;flex:none}
+.venue-card .ico svg{width:100%;height:100%}
+/* RSVP */
+.rsvp{background:linear-gradient(160deg,#8e1d4c,#5e1032);color:#fff;border-radius:26px;padding:3rem 1.6rem;max-width:820px;margin:0 auto 4rem;text-align:center}
+.rsvp h2{color:#fff}
+.rsvp .sub{color:#f3d3df}
+.rsvp form{display:flex;flex-direction:column;gap:.9rem;max-width:420px;margin:0 auto}
+.rsvp input,.rsvp select{font-family:'Tajawal',sans-serif;font-size:1rem;padding:.85rem 1rem;border-radius:12px;border:none;outline:none;text-align:center}
+.rsvp button{font-family:'Tajawal',sans-serif;background:var(--gold);color:#3a2230;font-weight:700;font-size:1.05rem;padding:.9rem;border:none;border-radius:12px;cursor:pointer;transition:transform .15s}
+.rsvp button:hover{transform:scale(1.03)}
+.rsvp .ok{display:none;margin-top:1.2rem;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:.9rem;border-radius:12px;font-size:.95rem}
+.demo-note{font-size:.78rem;color:#e9b9cb;margin-top:1.4rem}
+/* FOOTER */
+footer{text-align:center;padding:2.4rem 1rem;color:var(--ink-soft);font-size:.85rem;background:#f7e6dc}
+footer .brand{font-family:'Amiri',serif;color:var(--rose);font-size:1.05rem}
+/* petals */
+.petal{position:absolute;top:-6vh;font-size:1.1rem;color:var(--rose-soft);opacity:.55;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translateY(115vh) rotate(340deg)}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="hero">
+  <svg class="rings" viewBox="0 0 100 100" fill="none">
+    <circle cx="38" cy="55" r="22" stroke="#d4a24e" stroke-width="4"/>
+    <circle cx="62" cy="55" r="22" stroke="#c2306b" stroke-width="4"/>
+    <path d="M50 18 l6 8 -6 8 -6 -8 z" fill="#8e1d4c"/>
+  </svg>
+  <p class="bism">بسم الله الرحمن الرحيم</p>
+  <h1 class="names">ليلى <span class="amp">&</span> عمر</h1>
+  <p class="date">الجمعة ١٩ فبراير ٢٠٢٧</p>
+  <p class="hijri">يتشرّف آل حسان وآل سالم بدعوتكم لمشاركتهما أفراحهما</p>
+  <div class="divider"></div>
+  <p class="scroll-hint">اسحبوا للأسفل ↓</p>
+  <span class="petal" style="right:12%;animation-duration:11s">❀</span>
+  <span class="petal" style="right:32%;animation-duration:14s;animation-delay:2s">✿</span>
+  <span class="petal" style="right:55%;animation-duration:12s;animation-delay:4s">❀</span>
+  <span class="petal" style="right:74%;animation-duration:15s;animation-delay:1s">✿</span>
+  <span class="petal" style="right:90%;animation-duration:10s;animation-delay:3s">❀</span>
+</header>
+
+<section id="count">
+  <h2>العد التنازلي</h2>
+  <p class="sub">باقي على الفرح</p>
+  <div class="count" id="countdown">
+    <div class="cell"><div class="num" id="d">--</div><div class="lbl">يوم</div></div>
+    <div class="cell"><div class="num" id="h">--</div><div class="lbl">ساعة</div></div>
+    <div class="cell"><div class="num" id="m">--</div><div class="lbl">دقيقة</div></div>
+    <div class="cell"><div class="num" id="s">--</div><div class="lbl">ثانية</div></div>
+  </div>
+</section>
+
+<section id="story">
+  <h2>حكايتنا</h2>
+  <p class="sub">محطات جمعتنا على الطريق</p>
+  <div class="story">
+    <div class="item"><div class="when">اللقاء الأول</div><div class="what">صدفة جميلة في حفل عائلي، وابتسامة ما اتنسيتش.</div></div>
+    <div class="item"><div class="when">الخطوبة</div><div class="what">وسط الأهل والحبايب، اتكتب أول فصل رسمي في الحكاية.</div></div>
+    <div class="item"><div class="when">كتب الكتاب</div><div class="what">على سنة الله ورسوله، وجمعتنا كلمة طيبة.</div></div>
+    <div class="item"><div class="when">الفرح</div><div class="what">وهنا بنستناكم تشاركونا أسعد ليلة في العمر.</div></div>
+  </div>
+</section>
+
+<section id="venue">
+  <h2>مكان الفرح</h2>
+  <p class="sub">قاعة الياسمين — حفل استقبال وسهرة</p>
+  <div class="venue-card">
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#8e1d4c" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span> قاعة الياسمين للأفراح، شارع التحرير، الدقي، الجيزة</div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#8e1d4c" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span> الاستقبال ٧ مساءً — بداية الحفل ٨ مساءً</div>
+    <div class="row"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#8e1d4c" stroke-width="2"><rect x="3" y="11" width="18" height="6" rx="2"/><path d="M5 11l1.8-4.5h10.4L19 11"/><circle cx="7.5" cy="17" r="1.6" fill="#8e1d4c" stroke="none"/><circle cx="16.5" cy="17" r="1.6" fill="#8e1d4c" stroke="none"/></svg></span> متاح جراج خاص بالقاعة</div>
+  </div>
+</section>
+
+<section class="rsvp" id="rsvp">
+  <h2>تأكيد الحضور</h2>
+  <p class="sub">شرّفونا بتأكيد حضوركم قبل ١ فبراير ٢٠٢٧</p>
+  <form id="rsvpForm">
+    <input type="text" placeholder="الاسم الكريم" required>
+    <select required>
+      <option value="" disabled selected>عدد الحضور</option>
+      <option>شخص واحد</option>
+      <option>شخصان</option>
+      <option>٣ أشخاص</option>
+      <option>٤ أشخاص</option>
+    </select>
+    <button type="submit">تأكيد الحضور</button>
+  </form>
+  <div class="ok" id="okMsg">تم تسجيل تأكيدكم للعرض التجريبي ✨ في الدعوة الحقيقية بيوصل تأكيدكم لأصحاب الفرح.</div>
+  <p class="demo-note">نموذج عرض تجريبي — لا يتم إرسال أو حفظ أي بيانات فعلية.</p>
+</section>
+
+<footer>
+  <p class="brand">LoveCode 💝</p>
+  <p>ديمو وهمي لدعوة زفاف إلكترونية من تصميم LoveCode — الأسماء والتواريخ والأماكن خيالية للعرض.</p>
+</footer>
+
+<script>
+var target = new Date('2027-02-19T19:00:00+02:00').getTime();
+function pad(n){ return n < 10 ? '0' + n : '' + n; }
+function tick(){
+  var diff = target - Date.now();
+  if (diff < 0) diff = 0;
+  var d = Math.floor(diff / 86400000);
+  var h = Math.floor(diff % 86400000 / 3600000);
+  var m = Math.floor(diff % 3600000 / 60000);
+  var s = Math.floor(diff % 60000 / 1000);
+  document.getElementById('d').textContent = d;
+  document.getElementById('h').textContent = pad(h);
+  document.getElementById('m').textContent = pad(m);
+  document.getElementById('s').textContent = pad(s);
+}
+tick(); setInterval(tick, 1000);
+document.getElementById('rsvpForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('okMsg').style.display = 'block';
+  this.querySelector('button').textContent = 'تم التأكيد ✓';
+});
+</script>
+</body>
+</html>
