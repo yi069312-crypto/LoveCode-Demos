@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مريم وكريم | دعوة خطوبة، ديمو من LoveCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ee; --card:#ffffff; --line:#e3d9c3;
+  --em:#14532d; --em2:#1e6b3c; --gold:#b8860b; --ink:#22301f; --muted:#6b7263;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--ink)}
+body::before{content:'';position:fixed;inset:0;opacity:.5;background:
+  radial-gradient(600px 400px at 85% 0%, rgba(184,134,11,.10), transparent 60%),
+  radial-gradient(500px 420px at 0% 45%, rgba(20,83,45,.08), transparent 60%),
+  radial-gradient(500px 500px at 90% 100%, rgba(184,134,11,.08), transparent 60%);
+  pointer-events:none;z-index:0}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+.hero{min-height:844px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 20px 60px;position:relative;z-index:1}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--em2);font-size:13px;font-weight:700;margin-bottom:30px}
+.rings{position:relative;width:120px;height:96px;margin-bottom:22px}
+.rings svg{position:absolute}
+.r1{right:22px;top:6px}
+.r2{left:22px;top:14px}
+.pre{font-family:'Amiri',serif;font-size:20px;color:var(--gold);margin-bottom:10px}
+.names{font-family:'Amiri',serif;font-size:54px;font-weight:700;color:var(--em);line-height:1.3;margin-bottom:8px}
+.names span{color:var(--gold)}
+.date-line{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.venue-line{color:var(--muted);font-size:14px;margin-bottom:32px}
+.orn{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.orn i{display:block;width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn i:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+.btn{display:inline-block;padding:13px 32px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;background:var(--em);color:#fff;box-shadow:0 12px 28px rgba(20,83,45,.25);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.scroll-hint{margin-top:40px;color:var(--muted);font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint svg{animation:bob 1.6s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+section{padding:66px 0;position:relative;z-index:1}
+.eyebrow{color:var(--gold);font-size:13px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+h2.title{font-family:'Amiri',serif;font-size:34px;font-weight:700;color:var(--em);margin-bottom:8px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:30px;line-height:1.8}
+.note{display:inline-block;margin-top:18px;padding:6px 14px;border-radius:999px;background:#fdf6e3;border:1px dashed #d9c48a;color:#8a6a12;font-size:12px;font-weight:700}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.count .cell{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 6px;text-align:center;box-shadow:0 6px 18px rgba(20,83,45,.05)}
+.count b{display:block;font-size:30px;font-weight:900;color:var(--em)}
+.count span{color:var(--muted);font-size:12px;font-weight:600}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;box-shadow:0 6px 18px rgba(20,83,45,.05)}
+.dcard .ic{width:48px;height:48px;border-radius:50%;background:#eef5ef;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.dcard b{display:block;font-size:15px;font-weight:800;color:var(--em);margin-bottom:4px}
+.dcard span{color:var(--muted);font-size:13px;line-height:1.7}
+.tl{position:relative;padding-right:26px}
+.tl::before{content:'';position:absolute;right:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--em),var(--gold))}
+.tl-item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:14px;box-shadow:0 4px 14px rgba(20,83,45,.04)}
+.tl-item::before{content:'';position:absolute;right:-25px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
+.tl-item .when{color:var(--gold);font-size:12px;font-weight:800;margin-bottom:2px}
+.tl-item b{display:block;font-size:15px;font-weight:800;color:var(--em);margin-bottom:4px}
+.tl-item p{color:var(--muted);font-size:13px;line-height:1.8}
+.rsvp{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px 28px;text-align:center;box-shadow:0 10px 30px rgba(20,83,45,.06)}
+.rsvp h2{font-family:'Amiri',serif;font-size:26px;color:var(--em);margin-bottom:8px}
+.rsvp>p{color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.9}
+.field{width:100%;background:#fbf9f2;border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);font-family:inherit;font-size:14px;margin-bottom:12px;text-align:right}
+.field:focus{outline:none;border-color:var(--em2)}
+.send{width:100%;border:none;cursor:pointer;padding:15px;border-radius:14px;font-family:inherit;font-weight:900;font-size:16px;color:#fff;background:var(--em)}
+.demo-note{margin-top:16px;font-size:12px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:44px 0 60px;text-align:center;position:relative;z-index:1}
+footer .brand{font-size:22px;font-weight:900;margin-bottom:8px;color:var(--em)}
+footer .brand span{color:var(--gold)}
+footer p{color:var(--muted);font-size:13px;margin-bottom:14px;line-height:1.9}
+.fchip{display:inline-block;padding:7px 18px;border-radius:999px;border:1px dashed var(--line);color:var(--muted);font-size:12px;font-weight:700;background:#fff}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:420px){.names{font-size:44px}.count b{font-size:24px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">نموذج دعوة خطوبة، ديمو للعرض</div>
+  <div class="rings">
+    <svg class="r1" width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#b8860b" stroke-width="1.6"><circle cx="12" cy="14" r="7"/><path d="M9 7l3-4 3 4z" fill="#f3d489" stroke="#b8860b"/></svg>
+    <svg class="r2" width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#14532d" stroke-width="1.6"><circle cx="12" cy="14" r="7"/><path d="M9 7l3-4 3 4z" fill="#dcebe0" stroke="#14532d"/></svg>
+  </div>
+  <div class="pre">بسم الله الرحمن الرحيم</div>
+  <div class="names">مريم <span>و</span> كريم</div>
+  <div class="date-line">الجمعة ٢٠ ديسمبر ٢٠٢٦</div>
+  <div class="venue-line">قاعة نموذجية، مدينة نصر، القاهرة</div>
+  <div class="orn"><i></i><svg width="20" height="20" viewBox="0 0 24 24" fill="#b8860b"><path d="M12 21s-7.5-4.9-9.7-9.1C.7 8.6 2.4 5 5.7 5c2 0 3.4 1.1 4.1 2.3h2.4C12.9 6.1 14.3 5 16.3 5c3.3 0 5 3.6 3.4 6.9C19.5 16.1 12 21 12 21z"/></svg><i></i></div>
+  <a class="btn" href="#details">شوف تفاصيل اليوم</a>
+  <div class="scroll-hint">اسحب للأسفل
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7263" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</div>
+
+<section>
+  <div class="wrap reveal">
+    <div style="text-align:center;margin-bottom:28px">
+      <div class="eyebrow">العد شغال</div>
+      <h2 class="title">فاضل على الفرح</h2>
+    </div>
+    <div class="count">
+      <div class="cell"><b>٢٧</b><span>يوم</span></div>
+      <div class="cell"><b>١٠</b><span>ساعة</span></div>
+      <div class="cell"><b>٤٥</b><span>دقيقة</span></div>
+      <div class="cell"><b>٠٠</b><span>ثانية</span></div>
+    </div>
+    <div style="text-align:center"><span class="note">أرقام افتراضية لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<section id="details">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">كل اللي محتاج تعرفه</div>
+      <h2 class="title">تفاصيل اليوم</h2>
+      <p class="sub">مكان ومعاد وملاحظات، في كروت واضحة.</p>
+    </div>
+    <div class="cards">
+      <div class="dcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14532d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><b>المكان</b><span>قاعة نموذجية، مدينة نصر<br>القاهرة</span></div>
+      <div class="dcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14532d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><b>البداية</b><span>الساعة ٨ مساءً<br>الاستقبال من ٧:٣٠</span></div>
+      <div class="dcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14532d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></div><b>الدعوة</b><span>عائلية<br>للمدعوين فقط</span></div>
+      <div class="dcard reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14532d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><b>الهدية الأجمل</b><span>وجودكم معنا<br>أغلى من أي هدية</span></div>
+    </div>
+    <div class="reveal" style="text-align:center"><span class="note">تفاصيل افتراضية لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">السهرة هتمشي إزاي</div>
+      <h2 class="title">برنامج الفرح</h2>
+      <p class="sub">مواعيد تقريبية للعرض.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="when">٧:٣٠ مساءً</div><b>الاستقبال</b><p>ضيافة أولية وتصوير مع العيلة.</p></div>
+      <div class="tl-item reveal"><div class="when">٨:٠٠ مساءً</div><b>دخول العروسين</b><p>أول ظهور لمريم وكريم وسط التصفيق.</p></div>
+      <div class="tl-item reveal"><div class="when">٨:٣٠ مساءً</div><b>لبس الدبل</b><p>اللحظة اللي كلنا مستنيينها.</p></div>
+      <div class="tl-item reveal"><div class="when">٩:٣٠ مساءً</div><b>العشاء والتورتة</b><p>سهرة وضحك وصور على أتم الاستعداد.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="wrap">
+    <div class="rsvp reveal">
+      <div class="eyebrow">شرّفنا</div>
+      <h2>أكد حضورك</h2>
+      <p>سيب اسمك وعدد المدعوين، وخلي مكانك محجوز.</p>
+      <form onsubmit="return false">
+        <input class="field" type="text" placeholder="الاسم الكريم">
+        <input class="field" type="text" placeholder="عدد المدعوين">
+        <button class="send" type="submit">تأكيد الحضور</button>
+      </form>
+      <div class="demo-note">نموذج عرض تجريبي: لا يتم إرسال أو حفظ أي بيانات فعلية.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Love<span>Code</span></div>
+    <p>ديمو وهمي لدعوة خطوبة إلكترونية من تصميم LoveCode.<br>الأسماء والتواريخ والتفاصيل خيالية للعرض.</p>
+    <span class="fchip">الأسماء والتواريخ والتفاصيل خيالية للعرض</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.25});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
