@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ليلى وعمر | قصتنا، ديمو من LoveCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1a0f1e; --bg2:#241327; --card:#2b1730; --line:#452343;
+  --rose:#ff6b9d; --gold:#f0c27b; --ink:#fdf3f6; --muted:#cfa9be;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:
+  radial-gradient(620px 420px at 80% -5%, rgba(255,107,157,.14), transparent 60%),
+  radial-gradient(500px 400px at 5% 40%, rgba(240,194,123,.09), transparent 60%),
+  radial-gradient(520px 520px at 85% 95%, rgba(255,107,157,.08), transparent 60%);
+  pointer-events:none;z-index:0}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+.hero{min-height:844px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;z-index:1}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,107,157,.10);color:#ffb8d0;font-size:13px;font-weight:700;margin-bottom:28px}
+.hearts{position:relative;width:130px;height:110px;margin-bottom:20px}
+.hearts svg{position:absolute}
+.h1c{right:18px;top:8px;transform:rotate(-10deg)}
+.h2c{left:18px;top:18px;transform:rotate(10deg)}
+.names{font-family:'Amiri',serif;font-size:52px;font-weight:700;line-height:1.3;margin-bottom:6px}
+.names span{background:linear-gradient(90deg,var(--rose),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.since{color:var(--muted);font-size:15px;margin-bottom:30px}
+.hero p.tag{color:var(--muted);font-size:16px;line-height:1.9;max-width:400px;margin-bottom:32px}
+.btn{display:inline-block;padding:13px 32px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;background:linear-gradient(135deg,var(--rose),var(--gold));color:#2a0e1c;box-shadow:0 12px 32px rgba(255,107,157,.30);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.scroll-hint{margin-top:44px;color:var(--muted);font-size:13px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint svg{animation:bob 1.6s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+section{padding:70px 0;position:relative;z-index:1}
+.eyebrow{color:var(--gold);font-size:13px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+h2.title{font-family:'Amiri',serif;font-size:34px;font-weight:700;margin-bottom:8px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:32px;line-height:1.8}
+.note{display:inline-block;margin-top:18px;padding:6px 14px;border-radius:999px;background:rgba(240,194,123,.10);border:1px dashed rgba(240,194,123,.4);color:#f0d3a0;font-size:12px;font-weight:700}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.count .cell{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 6px;text-align:center}
+.count b{display:block;font-size:30px;font-weight:900;background:linear-gradient(90deg,var(--rose),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.count span{color:var(--muted);font-size:12px;font-weight:600}
+.tl{position:relative;padding-right:26px}
+.tl::before{content:'';position:absolute;right:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--rose),var(--gold))}
+.tl-item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:16px}
+.tl-item::before{content:'';position:absolute;right:-25px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--rose);border:3px solid var(--bg)}
+.tl-item .when{color:var(--gold);font-size:12px;font-weight:800;margin-bottom:4px}
+.tl-item b{display:block;font-size:16px;font-weight:800;margin-bottom:6px}
+.tl-item p{color:var(--muted);font-size:13px;line-height:1.9}
+.mem{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mem .ph{height:150px;border-radius:18px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.mem .ph svg{position:absolute;inset:0;margin:auto;opacity:.9}
+.m1{background:linear-gradient(135deg,#ff6b9d,#b23a6b)}.m2{background:linear-gradient(135deg,#f0c27b,#c07f3a)}
+.m3{background:linear-gradient(135deg,#b06bd8,#6b3a8f)}.m4{background:linear-gradient(135deg,#6bc9d8,#2a7f8f)}
+.mem .ph .cap{position:absolute;bottom:0;right:0;left:0;padding:8px 12px;font-size:12px;font-weight:700;background:rgba(26,15,30,.55)}
+.letter{background:linear-gradient(160deg,#2b1730,#241327);border:1px solid var(--line);border-radius:24px;padding:36px 30px;position:relative}
+.letter::before{content:'\201D';position:absolute;top:8px;left:22px;font-size:70px;color:rgba(255,107,157,.22);font-family:serif}
+.letter p{font-family:'Amiri',serif;font-size:19px;line-height:2.2;color:#f6dfe9;margin-bottom:20px}
+.letter .sig{text-align:left;color:var(--gold);font-family:'Amiri',serif;font-size:17px}
+footer{border-top:1px solid var(--line);padding:44px 0 60px;text-align:center;position:relative;z-index:1}
+footer .brand{font-size:22px;font-weight:900;margin-bottom:8px}
+footer .brand span{background:linear-gradient(90deg,var(--rose),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+footer p{color:var(--muted);font-size:13px;margin-bottom:14px;line-height:1.9}
+.fchip{display:inline-block;padding:7px 18px;border-radius:999px;border:1px dashed var(--line);color:var(--muted);font-size:12px;font-weight:700}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:420px){.names{font-size:42px}.count b{font-size:24px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">نموذج موقع قصة حب، ديمو للعرض</div>
+  <div class="hearts">
+    <svg class="h1c" width="64" height="64" viewBox="0 0 24 24" fill="#ff6b9d"><path d="M12 21s-7.5-4.9-9.7-9.1C.7 8.6 2.4 5 5.7 5c2 0 3.4 1.1 4.1 2.3h2.4C12.9 6.1 14.3 5 16.3 5c3.3 0 5 3.6 3.4 6.9C19.5 16.1 12 21 12 21z"/></svg>
+    <svg class="h2c" width="48" height="48" viewBox="0 0 24 24" fill="#f0c27b"><path d="M12 21s-7.5-4.9-9.7-9.1C.7 8.6 2.4 5 5.7 5c2 0 3.4 1.1 4.1 2.3h2.4C12.9 6.1 14.3 5 16.3 5c3.3 0 5 3.6 3.4 6.9C19.5 16.1 12 21 12 21z"/></svg>
+  </div>
+  <div class="names">ليلى <span>و</span> عمر</div>
+  <div class="since">مع بعض من ١٤ فبراير ٢٠٢١</div>
+  <p class="tag">كل قصة حب بتستاهل تتحكي. دي حكايتنا، من أول نظرة لحد النهارده.</p>
+  <a class="btn" href="#story">اقرأ قصتنا</a>
+  <div class="scroll-hint">اسحب للأسفل
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#cfa9be" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</div>
+
+<section>
+  <div class="wrap reveal">
+    <div style="text-align:center;margin-bottom:28px">
+      <div class="eyebrow">العد شغال</div>
+      <h2 class="title">فاضل على ذكرانا</h2>
+    </div>
+    <div class="count">
+      <div class="cell"><b>٨٥</b><span>يوم</span></div>
+      <div class="cell"><b>١٢</b><span>ساعة</span></div>
+      <div class="cell"><b>٣٠</b><span>دقيقة</span></div>
+      <div class="cell"><b>٠٠</b><span>ثانية</span></div>
+    </div>
+    <div style="text-align:center"><span class="note">أرقام افتراضية لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">من البداية</div>
+      <h2 class="title">قصتنا</h2>
+      <p class="sub">أهم المحطات في خط زمني واحد، بتواريخ افتراضية للعرض.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal"><div class="when">١٤ فبراير ٢٠٢١</div><b>أول لقاء</b><p>في مكتبة صغيرة وسط البلد، وصلنا لنفس الكتاب في نفس اللحظة.</p></div>
+      <div class="tl-item reveal"><div class="when">٣ يونيو ٢٠٢١</div><b>أول معاد</b><p>قهوة على النيل، وكلام مخلصش غير وإحنا بنضحك.</p></div>
+      <div class="tl-item reveal"><div class="when">١٩ ديسمبر ٢٠٢٢</div><b>أول سفر مع بعض</b><p>أسوان، وصور الغروب اللي لسه على الموبايل لحد دلوقتي.</p></div>
+      <div class="tl-item reveal"><div class="when">١٤ فبراير ٢٠٢٤</div><b>الخطوبة</b><p>وسط العيلة، وكان الرد قبل ما السؤال يكمل.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">ألبومنا</div>
+      <h2 class="title">ذكرياتنا</h2>
+      <p class="sub">أماكن للصور الحقيقية، اللي تتبدل بصوركم أنتم.</p>
+    </div>
+    <div class="mem">
+      <div class="ph m1 reveal"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2a0e1c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.9-9.7-9.1C.7 8.6 2.4 5 5.7 5c2 0 3.4 1.1 4.1 2.3h2.4C12.9 6.1 14.3 5 16.3 5c3.3 0 5 3.6 3.4 6.9C19.5 16.1 12 21 12 21z"/></svg><div class="cap">أول صورة مع بعض</div></div>
+      <div class="ph m2 reveal"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2a0e1c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><div class="cap">غروب أسوان</div></div>
+      <div class="ph m3 reveal"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2a0e1c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg><div class="cap">أغنيتنا</div></div>
+      <div class="ph m4 reveal"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2a0e1c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg><div class="cap">يوم الخطوبة</div></div>
+    </div>
+    <div class="reveal" style="text-align:center"><span class="note">صور افتراضية لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<section id="letter">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">من القلب</div>
+      <h2 class="title">رسالة ليكي</h2>
+    </div>
+    <div class="letter reveal">
+      <p>يا ليلى، كل يوم معاكي بيبقى أحلى من اللي قبله. من أول مرة شوفتك وأنا عارف إن الحكاية دي مختلفة. بحبك النهارده أكتر من إمبارح، وأقل من بكرة.</p>
+      <div class="sig">عمر</div>
+    </div>
+    <div class="reveal" style="text-align:center"><span class="note">نص افتراضي لغرض العرض فقط</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Love<span>Code</span></div>
+    <p>ديمو وهمي لموقع قصة حب من تصميم LoveCode.<br>الأسماء والتواريخ والصور خيالية للعرض.</p>
+    <span class="fchip">الأسماء والتواريخ والصور خيالية للعرض</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.25});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
